@@ -21,7 +21,6 @@ return {
       },
     },
   },
-
   {
     "telescope.nvim",
     name = "telescope",

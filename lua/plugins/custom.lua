@@ -22,8 +22,11 @@ return {
     },
   },
   {
-    "telescope.nvim",
+    "nvim-telescope/telescope.nvim",
     name = "telescope",
+    keys = {
+      { "<leader>/", false },
+    },
     opts = function(_, opts)
       local conf = require("telescope.config").values
       require("telescope.builtin").live_grep({
@@ -89,5 +92,19 @@ return {
   {
     "mg979/vim-visual-multi",
     branch = "master",
+  },
+  {
+    "echasnovski/mini.surround",
+    opts = {
+      mappings = {
+        add = "sa", -- Add surrounding in Normal and Visual modes
+        delete = "sd", -- Delete surrounding
+        fin = "sf", -- Find surrounding (to the right)
+        find_left = "sF", -- Find surrounding (to the left)
+        highlight = "sh", -- Highlight surrounding
+        replace = "sr", -- Replace surrounding
+        update_n_lines = "sn", -- Update `n_lines`
+      },
+    },
   },
 }

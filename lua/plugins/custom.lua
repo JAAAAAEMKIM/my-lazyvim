@@ -25,7 +25,7 @@ return {
     "nvim-telescope/telescope.nvim",
     name = "telescope",
     keys = {
-      { "<leader>/", false },
+      { "<leader>/", vim.Nil, desc = "Comment Line" },
     },
     opts = function(_, opts)
       local conf = require("telescope.config").values

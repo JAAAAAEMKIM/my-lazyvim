@@ -4,3 +4,6 @@
 
 vim.keymap.set("v", "<leader>/", "gc", { remap = true })
 vim.keymap.set("n", "<leader>/", "gcc", { remap = true })
+vim.keymap.set("n", "c-/", "<Nop>")
+vim.keymap.set("n", "gs", "saiw", { remap = true })
+vim.keymap.set("v", "gs", "sa", { remap = true })

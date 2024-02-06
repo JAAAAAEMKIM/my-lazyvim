@@ -99,7 +99,7 @@ return {
       mappings = {
         add = "sa", -- Add surrounding in Normal and Visual modes
         delete = "sd", -- Delete surrounding
-        fin = "", -- Find surrounding (to the right)
+        find_right = "", -- Find surrounding (to the right)
         find_left = "", -- Find surrounding (to the left)
         highlight = "", -- Highlight surrounding
         replace = "sr", -- Replace surrounding

@@ -3,4 +3,4 @@
 -- Add any additional options here
 --
 
-vim.g.root_spec = { { ".git", "lua" }, "cwd" }
+-- vim.g.root_spec = { { ".git", "lua" }, "cwd" }

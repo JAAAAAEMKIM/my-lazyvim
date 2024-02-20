@@ -91,10 +91,6 @@ return {
     end,
   },
   {
-    "mg979/vim-visual-multi",
-    branch = "master",
-  },
-  {
     "echasnovski/mini.surround",
     opts = {
       mappings = {
@@ -123,5 +119,12 @@ return {
         root_dir = get_root_dir,
       })
     end,
+  },
+  {
+    "mg979/vim-visual-multi",
+    branch = "master",
+  },
+  {
+    "Pocco81/auto-save.nvim",
   },
 }

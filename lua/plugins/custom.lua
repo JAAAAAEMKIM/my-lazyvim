@@ -32,6 +32,7 @@ return {
       require("telescope.builtin").live_grep({
         vimgrep_arguments = table.insert(conf.vimgrep_arguments, "--fixed-strings"),
       })
+      -- opts.defaults.file_ignore_patterns = {}
     end,
   },
   -- Use <tab> for completion and snippets (supertab)
@@ -108,20 +109,19 @@ return {
     },
   },
   {
-    "christoomey/vim-tmux-navigator",
-    cmd = {
-      "TmuxNavigateLeft",
-      "TmuxNavigateDown",
-      "TmuxNavigateUp",
-      "TmuxNavigateRight",
-      "TmuxNavigatePrevious",
-    },
-    keys = {
-      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-    },
+    "neovim/nvim-lspconfig",
+    opts = function(_, opts)
+      local util = require("lspconfig.util")
+
+      local get_root_dir = function(fname)
+        return util.root_pattern(".git")(fname)
+          or util.root_pattern("package.json", "tsconfig.json")(fname)
+          or util.root_pattern("cwd")(fname)
+      end
+
+      opts.servers.tsserver = vim.tbl_extend("force", opts.servers.tsserver, {
+        root_dir = get_root_dir,
+      })
+    end,
   },
 }

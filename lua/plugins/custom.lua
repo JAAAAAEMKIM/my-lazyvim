@@ -124,7 +124,4 @@ return {
     "mg979/vim-visual-multi",
     branch = "master",
   },
-  {
-    "Pocco81/auto-save.nvim",
-  },
 }

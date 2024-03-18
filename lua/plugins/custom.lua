@@ -117,6 +117,9 @@ return {
 
       opts.servers.tsserver = vim.tbl_extend("force", opts.servers.tsserver, {
         root_dir = get_root_dir,
+        initializationOptions = {
+          maxTsServerMemory = 4096,
+        },
       })
     end,
   },

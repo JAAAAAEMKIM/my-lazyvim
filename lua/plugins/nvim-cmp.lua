@@ -55,15 +55,16 @@ return {
       opts.formatting = vim.tbl_extend("force", opts.formatting, {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-          -- Kind icons
-          vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-          -- Source
-          vim_item.menu = ({
+          local kind = vim_item.kind
+          local menu = ({
             buffer = "[Buffer]",
             nvim_lsp = "[LSP]",
             luasnip = "[LuaSnip]",
             nvim_lua = "[Lua]",
           })[entry.source.name]
+
+          vim_item.kind = " " .. (kind_icons[kind] or "")
+          vim_item.menu = kind .. " " .. menu
           return vim_item
         end,
       })
@@ -71,6 +72,10 @@ return {
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
         { name = "crates" },
       }))
+
+      opts.performance = {
+        debounce = 500,
+      }
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)

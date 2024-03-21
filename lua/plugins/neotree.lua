@@ -23,8 +23,5 @@ return {
         required_width = 150,
       },
     })
-    opts.window = {
-      width = 72,
-    }
   end,
 }

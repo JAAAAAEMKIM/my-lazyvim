@@ -64,7 +64,7 @@ return {
           })[entry.source.name]
 
           vim_item.kind = " " .. (kind_icons[kind] or "")
-          vim_item.menu = kind .. " " .. menu
+          vim_item.menu = kind .. " " .. (menu or "")
           return vim_item
         end,
       })

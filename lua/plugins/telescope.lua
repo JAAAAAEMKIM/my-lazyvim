@@ -1,7 +1,8 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    name = "telescope",
+    lazy = false,
+    priority = 1000,
     keys = {
       { "<leader>/", false },
     },

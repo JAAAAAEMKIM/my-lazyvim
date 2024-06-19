@@ -6,6 +6,7 @@ local get_root_dir = function(fname)
     or util.root_pattern("cwd")(fname)
 end
 
+-- typescript-tools.nvim
 -- return {
 --   {
 --     "pmizio/typescript-tools.nvim",
@@ -20,29 +21,20 @@ end
 --     },
 --   },
 -- }
+
 return {
   "neovim/nvim-lspconfig",
   ---@class PluginLspOpts
   opts = {
-    ---@type lspconfig.options
+    inlay_hints = { enabled = false },
     servers = {
-      -- tsserver will be automatically installed with mason and loaded with lspconfig
-      tsserver = {
+      vtsls = {
         root_dir = get_root_dir,
         settings = {
-
           tsserver_file_preferences = {
             importModuleSpecifierPreference = "non-relative",
           },
         },
-        --
-        -- opts = {
-        --   settings = {
-        --     tsserver_file_preferences = {
-        --       importModuleSpecifierPreference = "non-relative",
-        --     },
-        --   },
-        -- },
       },
     },
   },

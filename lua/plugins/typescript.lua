@@ -31,8 +31,10 @@ return {
       vtsls = {
         root_dir = get_root_dir,
         settings = {
-          tsserver_file_preferences = {
-            importModuleSpecifierPreference = "non-relative",
+          typescript = {
+            preferences = {
+              importModuleSpecifier = "non-relative",
+            },
           },
         },
       },

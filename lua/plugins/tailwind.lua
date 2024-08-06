@@ -1,13 +1,14 @@
-local dir = require("utils.dir")
+return {}
 
-return {
-  "neovim/nvim-lspconfig",
-  ---@class PluginLspOpts
-  opts = {
-    servers = {
-      tailwindcss = {
-        root_dir = dir.get_root_dir,
-      },
-    },
-  },
-}
+-- local dir = require("utils.dir")
+-- return {
+--   "neovim/nvim-lspconfig",
+--   ---@class PluginLspOpts
+--   opts = {
+--     servers = {
+--       tailwindcss = {
+--         root_dir = dir.get_root_dir,
+--       },
+--     },
+--   },
+-- }

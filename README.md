@@ -1,5 +1,6 @@
 
 LazyVim Starter를 통해 초기화.
+
 Custom Config을 여러 기기에서 사용하기 위해 git에 업로드
 
 --- 

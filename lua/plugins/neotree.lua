@@ -1,6 +1,5 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-
   opts = function(_, opts)
     opts.default_component_configs = vim.tbl_extend("force", opts.default_component_configs, {
       container = {
